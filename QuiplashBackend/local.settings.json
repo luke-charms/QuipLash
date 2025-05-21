@@ -3,6 +3,6 @@
   "Values": {
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
-    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=treehuggersstore32890818;AccountKey=2RTzGGczbLgcH2rdxbT9fNWcV/+Bv65v83e1POrPqlvzEYZ7FdD+TMAi0kG4H4SCrKw5Lwc9bWxO+ASt8fGNAQ==;EndpointSuffix=core.windows.net"
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=treehuggersstore32890818;AccountKey=insert account key;EndpointSuffix=core.windows.net"
   }
 }

@@ -3,7 +3,7 @@ import azure.cosmos as cosmos
 import azure.cosmos.exceptions as exceptions
 
 class Prompt:
-  client = cosmos.cosmos_client.CosmosClient("https://comp3207-quiplashcw-2324.documents.azure.com:443/", "toIKaWtIJDhewu3iePI6VnrnDv43TnzMvEY4JpVod8g5CPon7UohNyoz5fufn1Q8rC2tUBoyKsHIACDb3X0oPA==")
+  client = cosmos.cosmos_client.CosmosClient("https://comp3207-quiplashcw-2324.documents.azure.com:443/", "insert azure keycode")
   db_client = client.get_database_client("quiplash")
   players_container = db_client.get_container_client("player")
 
