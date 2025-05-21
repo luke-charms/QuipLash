@@ -1,0 +1,11 @@
+<h2>{{me.currentPromptQuestions[0]}}</h2>
+<div v-if="me.state == 2 && (Object.keys(players)).includes(me.name)">
+    <input type="text" id="answerInput" v-model="answerInput" placeholder="Input">
+    <p><button class="btn btn-lg btn-success" @click="answer">Done</button></p>
+</div>
+<div v-else-if="me.state == 2 && (Object.keys(audience)).includes(me.name)">
+    <p><strong>Cannot answer since in audience... </strong></p>
+</div>
+<div v-else>
+    <p><strong>You answered: </strong>{{answerInput}}</p>
+</div>

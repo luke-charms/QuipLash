@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+    <%- include('header'); -%>
+
+    <h2 class="title"><span style="color: rgb(37, 142, 187)">QUIPLASH</span></h2>
+
+    
+    <div id="game">
+
+        <!-- Error Display -->
+        <div v-if="error" class="alert alert-danger">
+            <strong>Error: </strong> {{error}}
+        </div>
+
+        <!-- Waiting for connection -->
+        <div v-if="gameState.state === false">
+            <%- include('loading') -%>
+        </div>
+
+        <!-- Register/Login Screen -->
+        <div v-else-if="gameState.state == 1">
+            <%- include('registerLoginDisplay') -%>
+        </div>
+
+        <!-- Submitting Prompts Screen -->
+        <div v-else-if="gameState.state == 2">
+            <%- include('promptDisplay') -%>
+        </div>
+
+        <!-- Answering Prompts Screen -->
+        <div v-else-if="gameState.state == 3">
+            <%- include('answerDisplay') -%>
+        </div>
+
+        <!-- Voting on Answers Screen -->
+        <div v-else-if="gameState.state == 4">
+            <%- include('voteDisplay') -%>
+        </div>
+
+        <!-- Seeing the results from the previous vote -->
+        <div v-else-if="gameState.state == 5">
+            <%- include('resultDisplay') -%>
+        </div>
+
+        <!-- Seeing the total scores so far -->
+        <div v-else-if="gameState.state == 6">
+            <%- include('scoresDisplay') -%>
+        </div>
+
+        <!-- Show the final scores -->
+        <div v-else-if="gameState.state == 7">
+            <%- include('endDisplay') -%>
+        </div>
+    </div>
+
+    <%- include('footer'); -%>
+
+</html>

@@ -1,0 +1,36 @@
+<div v-if="me.state == 0">
+    <h2>Enter your username:</h2>
+    <input type="text" id="username" v-model="usernameText" placeholder="Username">
+
+    <h2>Enter your password:</h2>
+    <input type="password" id="password" v-model="passwordText" placeholder="Password">
+
+    <div class="containerButton">
+      <div class="centreLoginRegister">
+        <button class="firstbutton" id="registerBtn" @click="register">Register</button>
+        <button class="firstbutton" id="loginBtn" @click="login">Login</button>
+      </div>
+    </div>
+
+    <div v-if="errorMsg != null">
+      <p>{{errorMsg}}</p>
+    </div>
+    
+  </div>
+  <div v-else>
+  <p>Waiting for other players...</p>
+  
+  <div class="row">
+  <div v-for="player of players" class="col-sm-2 text-center">
+  <div class="player">
+  <strong>{{player.name}}</strong>
+  </div>
+  </div>
+  
+  <div v-if="me.admin == true && playersSize > 2">
+  <button class="btn btn-lg btn-success" @click="admin('start')">Start Game</button>
+  </div>
+  
+  </div>
+  </div>
+  

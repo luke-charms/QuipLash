@@ -1,0 +1,14 @@
+<h2>{{gameState.currentPrompt}}</h2>
+<div v-if="me.selfAnswer == true">
+    <p>Sit back and wait for judgement!</p>
+</div>
+<div v-else>
+    <div v-if="me.state == 3">
+        <p>Pick your favourite response!</p>
+        <p><button @click="vote1">{{gameState.currentPromptAnswers[0]}}</button></p>
+        <p><button @click="vote2">{{gameState.currentPromptAnswers[1]}}</button></p>
+    </div>
+    <div v-else>
+        <p><strong>You picked: </strong>{{gameState.currentPromptAnswers[selectedAnswer]}}</p>
+    </div>    
+</div>

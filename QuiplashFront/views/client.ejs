@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+    <%- include('header'); -%>
+
+    <div id="game">
+        <div class="small" v-if="me.state > 0"> ADMIN: {{me.admin}} </div>
+        <!--<div class="small"> STATE: {{gameState.state}} and PLAYER-STATE: {{me.state}} </div> -->
+
+        <h2 class="title"><span style="color: rgb(37, 142, 187)">QUIPLASH</span></h2>
+
+        <div v-if="me.admin == true && gameState.state > 1 && gameState.state < 7"><button class="nextButton" @click="next">Next</button></div>
+
+        <!-- Error Display -->
+        <div v-if="error" class="alert alert-danger">
+            <strong>Error: </strong> {{error}}
+        </div>
+
+        <!-- Waiting for connection -->
+        <div v-if="gameState.state === false">
+            <%- include('loading') -%>
+        </div>
+
+        <!-- Register/Login Screen -->
+        <div v-else-if="gameState.state == 1">
+            <%- include('registerLogin'); -%>
+        </div>
+
+        <!-- Submitting Prompts Screen -->
+        <div v-else-if="gameState.state == 2">
+            <%- include('prompt') -%>
+        </div>
+
+        <!-- Answering Prompts Screen -->
+        <div v-else-if="gameState.state == 3">
+            <%- include('answer') -%>
+        </div>
+
+        <!-- Voting on Answers Screen -->
+        <div v-else-if="gameState.state == 4">
+            <%- include('vote') -%>
+        </div>
+
+        <!-- Seeing the results from the previous vote -->
+        <div v-else-if="gameState.state == 5">
+            <%- include('result') -%>
+        </div>
+
+        <!-- Seeing the total scores so far -->
+        <div v-else-if="gameState.state == 6">
+            <%- include('scores') -%>
+        </div>
+
+        <!-- Show the final scores -->
+        <div v-else-if="gameState.state == 7">
+            <%- include('end') -%>
+        </div>
+
+
+    </div>
+
+    <%- include('footer'); -%>
+
+</html>

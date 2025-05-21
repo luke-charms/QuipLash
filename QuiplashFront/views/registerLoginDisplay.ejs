@@ -1,0 +1,11 @@
+<p>{{audienceSize}} in audience</p>
+<h2 class="wrap">Waiting for everyone to join!</h2>
+<h3>Join us at {{url}}</h3>
+<p>Waiting for other players...</p>
+<div class="row">
+<div v-for="player of players" class="col-sm-2 text-center">
+<div class="player">
+<p>{{player.name}}</p>
+</div>
+</div>
+</div>

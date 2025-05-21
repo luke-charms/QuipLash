@@ -1,0 +1,27 @@
+<p>{{audienceSize}} in audience</p>
+<h1>CURRENT PROMPT: "{{gameState.currentPrompt}}"</h1>
+<div>
+    <h2>ANSWER 1: "{{gameState.currentPromptAnswers[0]}}"</h2><h2>ANSWER 2: "{{gameState.currentPromptAnswers[1]}}"</h2>
+</div>
+<h3>Player submitted answers:</h3>
+<div class="row">
+<div v-for="player of players" class="col-sm-2 text-center">
+<div class="player">
+<div v-if="player.state == 4">
+    <p>{{player.name}}</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<p>Audience submitted answers:</p>
+<div class="row">
+  <div v-for="person of audience" class="col-sm-3 text-center">
+    <div class="audience">
+      <div v-if="person.state == 4">
+        <p>{{person.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>

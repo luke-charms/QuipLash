@@ -1,0 +1,8 @@
+<div v-if="me.state == 1">
+    <h2>Think of a funny question or prompt:</h2>
+    <input type="text" id="promptInput" v-model="promptInput" placeholder="Input" value="funny prompt">
+    <p><button class="btn btn-lg btn-success" @click="prompt">Done</button></p>
+</div>
+<div v-else>
+    <p>Now you just need to wait for everyone else...</p>
+</div>

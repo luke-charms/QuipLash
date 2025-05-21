@@ -1,0 +1,26 @@
+  <div class="header">
+    <p>{{audienceSize}} in audience</p>
+    <h2>Come up with your prompts!</h2>
+  </div>
+
+  <h3>Player submitted prompts:</h3>
+  <div class="row">
+    <div v-for="player of players" class="col-sm-2 text-center">
+      <div class="player">
+        <div v-if="player.state == 2">
+          <p>{{player.name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Audience submitted prompts:</p>
+  <div class="row">
+    <div v-for="person of audience" class="col-sm-3 text-center">
+      <div class="audience">
+        <div v-if="person.state == 2">
+          <p>{{person.name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

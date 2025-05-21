@@ -1,0 +1,20 @@
+<p>{{audienceSize}} in audience</p>
+<h2 class="currentPrompt">CURRENT PROMPT: "{{gameState.currentPrompt}}"</h2>
+<p>
+    <p>
+        <h2>ANSWER 1: "{{gameState.currentPromptAnswers[0]}}"</h2>
+        <h3>ANSWER BY PLAYER: {{voteState.playerAnswer1}}</h3>
+        <p>{{voteState.answer1VoteNum}} votes</p>
+        <div v-for="player in voteState.answer1VotePlayers">
+            <p>{{ player }}</p>
+        </div>
+    </p>
+    <p>
+        <h2>ANSWER 2: "{{gameState.currentPromptAnswers[1]}}"</h2>
+        <h3>ANSWER BY PLAYER: {{voteState.playerAnswer2}}</h3>
+        <p>{{voteState.answer2VoteNum}} votes</p>
+        <div v-for="player in voteState.answer2VotePlayers">
+            <p>{{ player }}</p>
+        </div>
+    </p>
+</p>
